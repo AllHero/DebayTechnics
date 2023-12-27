@@ -5,7 +5,7 @@ on:
   push:
     branches: [ main ]
 env:
-    SolutionName: ${{ secrets.SOLUTION_NAME }}
+    SolutionName: DebayTechnics
     BuildPlatform: Any CPU
     BuildConfiguration: Release
 
