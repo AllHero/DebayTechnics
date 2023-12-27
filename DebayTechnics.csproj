@@ -5,6 +5,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Our.Umbraco.TheDashboard" Version="13.0.0" />
     <PackageReference Include="Umbraco.Cms" Version="13.0.1" />
