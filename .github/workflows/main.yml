@@ -39,7 +39,7 @@ jobs:
           run: mkdir _build
 
         - name: List files in the directory
-          run: ls -la
+          run: dir
 
         - name: Build Solution
           run: |
