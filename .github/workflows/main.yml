@@ -33,4 +33,4 @@ jobs:
             server-username: ${{ secrets.USERNAME }}
             server-password: ${{ secrets.PASSWORD }}
             source-path: '_build'
-            source-fileName: Umbootstrap.Web.zip
+            source-fileName: Umbraco.Web.zip
