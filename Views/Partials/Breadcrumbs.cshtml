@@ -1,0 +1,16 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+<!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('@Url.Content("~/assets/img/breadcrumbs-bg.jpg")');">
+      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+        <h2>@Umbraco.AssignedContentItem.Name</h2>
+                    <ol>
+                        @foreach (var content in Model.Ancestors().Reverse())
+                        {
+                            <li><a href="@content.Url()">@content.Name</a></li>
+                        }
+                        <li>@Umbraco.AssignedContentItem.Name</li>
+                    </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->

@@ -1,0 +1,34 @@
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+  var homePage = Model.AncestorOrSelf<Home>();
+  var navItems = homePage.Children.Where(x => x.IsVisible());
+}
+<!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>Debay Technics<span>.</span></h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+         <li><a class="@(Umbraco.AssignedContentItem.Id == homePage.Id ? "active":null)" href="@homePage.Url()">@homePage.Name</a></li>
+                        @if (navItems != null && navItems.Any())
+                        {
+                            foreach (var item in navItems)
+                            {
+                                <li>
+                                    <a class="@(Umbraco.AssignedContentItem.Id == item.Id ? "active":null)" href="@item.Url()">@item.Name</a>
+                                </li>
+                            }
+                        }
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->

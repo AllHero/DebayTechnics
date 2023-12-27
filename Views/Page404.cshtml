@@ -1,0 +1,19 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Page404>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+@Html.Partial("~/Views/Partials/Breadcrumbs.cshtml")
+
+<div class="error-page d-flex flex-row align-items-center">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-12 text-center">
+				<span class="display-1 d-block">OEPS!</span>
+				<div class="mb-4 lead">Foutje van de firma, we vonden de correcte pagina niet terug</div>
+				<a href="/" class="btn btn-link">Back to Home</a>
+			</div>
+		</div>
+	</div>
+</div>

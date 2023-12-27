@@ -1,0 +1,68 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="@Url.Content("~/css/vendor/animate/animate.min.css")" rel="stylesheet">
+    <link href="@Url.Content("~/css/vendor/aos/aos.css")" rel="stylesheet">
+      <link href="@Url.Content("~/css/vendor/bootstrap/css/bootstrap.min.css")" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+      <link href="@Url.Content("~/css/vendor/bootstrap-icons/bootstrap-icons.css")" rel="stylesheet">
+      <link href="@Url.Content("~/css/vendor/boxicons/css/boxicons.min.css")" rel="stylesheet">
+      <link href="@Url.Content("~/css/vendor/glightbox/css/glightbox.min.css")" rel="stylesheet">
+    <link href="@Url.Content("~/css/vendor/remixicon/remixicon.css")" rel="stylesheet">
+    <link href="@Url.Content("~/css/vendor/swiper/swiper-bundle.min.css")" rel="stylesheet">
+    <link href="@Url.Content("~/scripts/cookiebar/jquery.cookiebar.css")" rel="stylesheet">
+    <link rel="stylesheet" href="@Url.Content("~/css/main.css")"/>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="@Url.Content("~/assets/favicon/apple-touch-icon.png")">
+    <link rel="icon" type="image/png" sizes="32x32" href="@Url.Content("~/assets/favicon/favicon-32x32.png")">
+    <link rel="icon" type="image/png" sizes="16x16" href="@Url.Content("~/assets/favicon/favicon-16x16.png")">
+    <link rel="manifest" href="@Url.Content("~/assets/favicon/site.webmanifest")">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    @await Component.InvokeAsync("Metadata", Model)
+</head>
+
+<body>
+@Html.Partial("~/Views/Partials/Navigation.cshtml")
+@RenderBody()
+@Html.Partial("~/Views/Partials/Footer.cshtml")
+
+<a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<!-- Vendor JS Files -->
+  <script src="@Url.Content("~/scripts/vendor/aos/aos.js")"></script>
+  <script src="@Url.Content("~/scripts/vendor/bootstrap/js/bootstrap.bundle.min.js")"></script>
+  <script src="@Url.Content("~/scripts/vendor/glightbox/js/glightbox.min.js")"></script>
+  <script src="@Url.Content("~/scripts/vendor/isotope-layout/isotope.pkgd.min.js")"></script>
+  <script src="@Url.Content("~/scripts/vendor/purecounter/purecounter_vanilla.js")"></script>
+  <script src="@Url.Content("~/scripts/vendor/swiper/swiper-bundle.min.js")"></script>
+    <script src="@Url.Content("~/scripts/vendor/typed.js/typed.min.js")"></script>
+    <script src="@Url.Content("~/scripts/lazysizes.min.js")"></script>
+    <script src="@Url.Content("~/scripts/ls.unveilhooks.min.js")"></script>
+    <script src="@Url.Content("~/scripts/jquery-1.8.0.min.js")"></script>
+    <script src="@Url.Content("~/scripts/cookiebar/jquery.cookiebar.js")"></script>
+<script src="@Url.Content("~/scripts/cookie-dialog.js")"></script>
+<script src="@Url.Content("~/scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/scripts/jquery.validate.unobtrusive.min.js")"></script>
+
+  <!-- Template Main JS File -->
+<script src="@Url.Content("~/scripts/main.js")"></script>
+
+<script type="text/javascript">
+        $(document).ready(function () { $.cookiedialog(); });
+        $(".umb-block-list > div").unwrap();
+    </script>
+
+</body>
+
+</html>

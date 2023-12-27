@@ -1,0 +1,194 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.OverOns>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using DebayTechnics.Helpers
+@{
+	Layout = "Master.cshtml";
+  var crewmembers = Model.Crew.Select(x => (CrewMember) x.Content).ToList();
+}
+
+<main id="main">
+@Html.Partial("~/Views/Partials/Breadcrumbs.cshtml")
+<!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row position-relative">
+
+          <div class="col-lg-7 about-img" style="background-image: url('@Model.HeadImage.Url()');"></div>
+
+          <div class="col-lg-7">
+            <h2>@Model.Subtitle</h2>
+            <div class="our-story">
+              <h4>Sinds 2000</h4>
+              <h3>Ons verhaal</h3>
+              @Html.RichTxtToHtml(Model.AboutText)
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- End About Section -->
+
+    <!-- ======= Stats Counter Section ======= -->
+    <section id="stats-counter" class="stats-counter section-bg">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="@Model.AantalKlanten" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Gelukkige klanten</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-cone-striped color-orange flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="@Model.Projecten" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Projecten</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-clipboard-data color-green flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="@Model.JarenErvaring" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Jaren ervaring</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-people color-pink flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="@Model.Medewerkers" data-purecounter-duration="1" class="purecounter"></span>
+                <p>Medewerkers</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+    </section><!-- End Stats Counter Section -->
+
+    <!-- ======= Our Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>Ons Team</h2>
+          </div>
+
+        <div class="row gy-5">
+
+          @{
+            foreach (var member in crewmembers)
+            {
+              <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+                <div class="member-img">
+                  <img src="@member.Image.Url()" class="img-fluid" alt="">
+                  <div class="social">
+                    <a href="mailto:@member.Email"><i class="bi bi-envelope"></i></a>
+                  </div>
+                </div>
+                <div class="member-info text-center">
+                  <h4>@member.Naam</h4>
+                </div>
+              </div>
+            }
+          }
+          
+
+          <!--
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
+            <div class="member-img">
+              <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+              <div class="social">
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>Laura Lieckens</h4>
+              </div>
+          </div> 
+
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
+            <div class="member-img">
+              <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+              <div class="social">
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>Niels Fossele</h4>
+              </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="400">
+            <div class="member-img">
+              <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+              <div class="social">
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>Ina De Backer</h4>
+              </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="500">
+            <div class="member-img">
+              <img src="assets/img/team/team-5.jpg" class="img-fluid" alt="">
+              <div class="social">
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>Eben De Backer</h4>
+              </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="600">
+            <div class="member-img">
+              <img src="assets/img/team/team-6.jpg" class="img-fluid" alt="">
+              <div class="social">
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>Lies D'Hondt</h4>
+              </div>
+          </div> -->
+
+        </div>
+
+      </div>
+    </section><!-- End Our Team Section -->
+</main>

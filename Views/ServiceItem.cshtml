@@ -1,0 +1,43 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.ServiceItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using DebayTechnics.Services
+@using DebayTechnics.Helpers
+@inject IServiceItemService ServiceItemService
+@{
+	Layout = "Master.cshtml";
+  var diensten = ServiceItemService.GetServiceItems();
+}
+<main id="main">
+@Html.Partial("~/Views/Partials/Breadcrumbs.cshtml")
+<!-- ======= Service Details Section ======= -->
+    <section id="service-details" class="service-details">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="services-list">
+              @{
+                foreach (var dienst in diensten.Cast<ServiceItem>())
+                {
+                  <a href="@dienst.Url()" class="@(Model.Title == dienst.Title ? "active" : null)">@dienst.Title</a>
+                }
+              }
+            </div>
+
+            <h4>Klik hierboven om meer de weten over een specifieke dienst</h4>
+            </div>
+
+          <div class="col-lg-8">
+            <img src="@Model.Image.Url()" alt="" class="img-fluid services-img">
+            <h3>@Model.Title</h3>
+            @Html.RichTxtToHtml(Model.Content)
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Service Details Section -->
+
+</main>
