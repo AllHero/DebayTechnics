@@ -40,8 +40,8 @@ jobs:
           uses: UmbHost/umbhost-web-deploy@v1.0.3
           with:
             website-name: debay-technics
-            server-computer-name: https://webdeploy.umbhost.net:8172
-            server-username: debay-technics_dploy
-            server-password: 123ParikE!
+            server-computer-name: 'https://webdeploy.umbhost.net:8172'
+            server-username: 'debay-technics_dploy'
+            server-password: '123ParikE!'
             source-path: '_build'
             source-fileName: DebayTechnics.zip
