@@ -8,6 +8,7 @@ env:
     SolutionName: DebayTechnics
     BuildPlatform: Any CPU
     BuildConfiguration: Release
+    ASPNETCORE_ENVIRONMENT: 'Release'
 
 jobs:
   build:
