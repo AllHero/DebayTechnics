@@ -25,23 +25,23 @@ jobs:
 
         - name: Install dependencies
           run: dotnet restore
-              
-        - name: Create Build Directory
-          run: mkdir _build
 
-        - name: List files in the directory
-          run: dir
+        - name: pwd
+          run: pwd
+
+        - name: make dir
+          run: mkdir _build
 
         - name: Build Solution
           run: |
-            dotnet build "../${{env.SolutionName}}" /nologo /nr:false /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:DeleteExistingFiles=True /p:SkipInvalidConfigurations=true /p:IncludeSetAclProviderOnDestination=False /p:AutoParameterizationWebConfigConnectionStrings=False /p:platform="${{env.BuildPlatform}}" /p:configuration="${{env.BuildConfiguration}}" /p:PackageLocation="../_build"
+            dotnet build "../${{env.SolutionName}}" /nologo /nr:false /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:DeleteExistingFiles=True /p:SkipInvalidConfigurations=true /p:IncludeSetAclProviderOnDestination=False /p:AutoParameterizationWebConfigConnectionStrings=False /p:platform="${{env.BuildPlatform}}" /p:configuration="${{env.BuildConfiguration}}" /p:PackageLocation="./_build"
 
         - name: Deploy to UmbHost
           uses: UmbHost/umbhost-web-deploy@v1.0.3
           with:
-            website-name: ${{ secrets.WEBSITE_NAME }}
-            server-computer-name: ${{ secrets.SERVER_COMPUTER_NAME }}
-            server-username: ${{ secrets.USERNAME }}
-            server-password: ${{ secrets.PASSWORD }}
+            website-name: 'debay-technics.be'
+            server-computer-name: 'https://webdeploy.umbhost.net:8172'
+            server-username: 'debay-technics_dploy'
+            server-password: '123ParikE!'
             source-path: '_build'
             source-fileName: DebayTechnics.zip
