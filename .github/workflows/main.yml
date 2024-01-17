@@ -38,7 +38,7 @@ jobs:
 
         - name: Read build
           run: |
-            dir /_build
+            dir ./_build
 
         - name: Deploy to UmbHost
           uses: UmbHost/umbhost-web-deploy@v1.0.3
