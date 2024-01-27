@@ -1,0 +1,38 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Jobs>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using DebayTechnics.Services
+@inject IJobItemService JobItemService;
+@{
+	Layout = "Master.cshtml";
+  var jobs = JobItemService.GetJobItems();
+}
+
+<main id="main">
+@Html.Partial("~/Views/Partials/Breadcrumbs.cshtml")
+<section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row gy-4">
+        @{
+          foreach (var job in jobs.Cast<JobItem>())
+          {
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-item  position-relative">
+                <h3>@job.Title</h3>
+                <br/>
+                <p>@job.Subtitle</p>
+                <br/>
+                <a href="@job.Url()" class="readmore stretched-link">Meer <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div><!-- End Service Item -->
+          }
+        }
+          
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+</main>

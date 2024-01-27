@@ -14,5 +14,6 @@ public class RegisterServicesComposer : IComposer
         builder.Services.AddScoped<IMailService,MailService>();
         builder.Services.AddScoped<IServiceItemService,ServiceItemService>();
         builder.Services.AddScoped<ITemplateService, TemplateService>();
+        builder.Services.AddScoped<IJobItemService, JobItemService>();
     }
 }

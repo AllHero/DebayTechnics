@@ -53,6 +53,53 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\media\02jk3rzs\verlichting59_n-1.jpeg" />
+    <Content Include="wwwroot\media\0blpx2xg\zonnepanelen.jpg" />
+    <Content Include="wwwroot\media\0qobdnan\hernieuwbare-energie.jpg" />
+    <Content Include="wwwroot\media\1cmiws0k\hero-carousel-3.jpg" />
+    <Content Include="wwwroot\media\1lyfzuds\laadpaal1-1152x1536.jpeg" />
+    <Content Include="wwwroot\media\20lov2t4\hero-carousel-1.jpg" />
+    <Content Include="wwwroot\media\3zrksv30\domotica.jpg" />
+    <Content Include="wwwroot\media\4jpdpvv3\img_4901-150x150.jpg" />
+    <Content Include="wwwroot\media\atwnwx0g\20191116_112340-rotated-1-1152x1536.jpeg" />
+    <Content Include="wwwroot\media\b0rm0k1j\green-energy.jpg" />
+    <Content Include="wwwroot\media\bhpisorr\laadpaal3-1152x1536.jpeg" />
+    <Content Include="wwwroot\media\c50prszl\laadpaal2-1152x1536.jpeg" />
+    <Content Include="wwwroot\media\cfon0avf\img_4302-150x150.jpg" />
+    <Content Include="wwwroot\media\ewydmtpk\img_4460-150x150.jpg" />
+    <Content Include="wwwroot\media\fykf3rkt\img_4496-150x150.jpg" />
+    <Content Include="wwwroot\media\giepflgd\videofonie.jpeg" />
+    <Content Include="wwwroot\media\h4bn4sya\about.jpg" />
+    <Content Include="wwwroot\media\hlaieavu\hero-carousel-5.jpg" />
+    <Content Include="wwwroot\media\hzgnviy4\team-1.jpg" />
+    <Content Include="wwwroot\media\ig1hoinw\werken7-1152x1536.jpeg" />
+    <Content Include="wwwroot\media\iwingzxr\img_5418-150x150.jpeg" />
+    <Content Include="wwwroot\media\j0jfcnjq\img_4549-150x150.jpg" />
+    <Content Include="wwwroot\media\j4vll4na\img_4422-150x150.jpg" />
+    <Content Include="wwwroot\media\jrmd44xp\img_4303-150x150.jpg" />
+    <Content Include="wwwroot\media\lbod30cl\constructions-1.jpg" />
+    <Content Include="wwwroot\media\n2th00gp\repairs-1.jpg" />
+    <Content Include="wwwroot\media\n44nfrnk\led.jpg" />
+    <Content Include="wwwroot\media\pcbdrhnz\20191122_152250-2048x1536-1-1024x768.jpeg" />
+    <Content Include="wwwroot\media\pssgztzo\img_4420-150x150.jpg" />
+    <Content Include="wwwroot\media\qbsfzb14\20191122_153828-1536x2048-1-1152x1536.jpeg" />
+    <Content Include="wwwroot\media\qsojohlz\logo-allhero-1.png" />
+    <Content Include="wwwroot\media\qy0cciej\hero-carousel-4.jpg" />
+    <Content Include="wwwroot\media\r1pofrqe\werken6-1152x1536.jpeg" />
+    <Content Include="wwwroot\media\sagjkgmy\img_4512-150x150.jpg" />
+    <Content Include="wwwroot\media\srjpavzi\img_5437-150x150.jpeg" />
+    <Content Include="wwwroot\media\teod2twg\ev-wall-ev-wall-1024x683.jpeg" />
+    <Content Include="wwwroot\media\wq1fatyu\features-4.jpg" />
+    <Content Include="wwwroot\media\xrif2jdi\werken8-1-1152x1536.jpeg" />
+    <Content Include="wwwroot\media\xukl4hox\image00022.jpeg" />
+    <Content Include="wwwroot\media\yalf4wac\hero-carousel-2.jpg" />
+    <Content Include="wwwroot\media\yfwjvw4a\blog-6.jpg" />
+    <Content Include="wwwroot\media\ym0dyir4\lopende9-1152x1536.jpeg" />
+    <Content Include="wwwroot\media\yy4f21t0\20191122_152224-2048x1536-1.jpeg" />
+    <Content Include="wwwroot\media\z31nfap1\img_4510-150x150.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\assets\" />
   </ItemGroup>
 

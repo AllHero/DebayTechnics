@@ -1,0 +1,49 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.JobItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using DebayTechnics.Helpers
+@{
+	Layout = "Master.cshtml";
+}
+
+<main id="main">
+@Html.Partial("~/Views/Partials/Breadcrumbs.cshtml")
+<!-- ======= Service Details Section ======= -->
+<section id="service-details" class="service-details">
+<div class="container" data-aos="fade-up" data-aos-delay="100">
+
+<div class="row gy-4">
+	<div class="col-12">
+		<h2>@Model.Title</h2>
+		
+		<h3 class="mt-4">Waarom werken bij Debay Technics</h3>
+		<p>
+			@Html.RichTxtToHtml(Model.Bedrijfsinfo)
+		</p>
+		@if (Model.Functiebeschrijving.ToString() != "")
+		{
+			<h3 class="mt-4">Je functie</h3>
+			<p>
+				@Html.RichTxtToHtml(Model.Functiebeschrijving)
+			</p>
+		}
+		@if (Model.ProfielBeschrijving.ToString() != "")
+        		{
+		<h3 class="mt-4">Je profiel</h3>
+		<p>
+			@Html.RichTxtToHtml(Model.ProfielBeschrijving)
+		</p>
+		
+		        }
+		<h2 class="mt-4">Hoe solliciteren?</h2>
+		<p>
+			Stuur je CV en motivatie brief naar <a href="mailto:info@debay-technics.be">info@debay-technics.be</a>.
+		</p>
+	</div>
+
+</div>
+
+</div>
+</section><!-- End Service Details Section -->
+
+</main>
