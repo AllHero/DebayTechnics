@@ -1,3 +1,9 @@
+@using DebayTechnics.Services
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inject IServiceItemService ServiceItemService
+@{
+  var diensten = ServiceItemService.GetServiceItems();
+}
 <!-- ======= Footer ======= -->
   <footer id="footer" class="footer" style="background: url('@Url.Content("~/assets/img/footer-bg.jpg")')">
 
@@ -15,10 +21,8 @@
                 <strong>Email:</strong> info@debaytechnics.be<br>
               </p>
               <div class="social-links d-flex mt-3">
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
                 <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
                 <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
               </div>
             </div>
           </div><!-- End footer info column-->
@@ -26,23 +30,23 @@
           <div class="col-lg-2 col-md-3 footer-links">
             <h4>Links</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Over ons</a></li>
-              <li><a href="#">Diensten</a></li>
-              <li><a href="#">Terms of service</a></li>
-              <li><a href="#">Privacy policy</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/over-ons">Over ons</a></li>
+              <li><a href="/diensten">Diensten</a></li>
+              <li><a href="/gebruiksvoorwaarden">Terms of service</a></li>
+              <li><a href="/privacy-policy">Privacy policy</a></li>
             </ul>
           </div><!-- End footer links column-->
 
           <div class="col-lg-2 col-md-3 footer-links">
             <h4>Diensten</h4>
             <ul>
-              <li><a href="#">Zonnepanelen</a></li>
-              <li><a href="#">Verlichting</a></li>
-              <li><a href="#">Elektriciteit</a></li>
-              <li><a href="#">Laadpalen & thuisbatterijen</a></li>
-              <li><a href="#">Toegangscontrole</a></li>
-              <li><a href="#">Domotica</a></li>
+               @{
+                 foreach (var dienst in diensten.Cast<ServiceItem>())
+                 {
+                   <li><a href="@dienst.Url()">@dienst.Title</a></li>
+                 }
+               }
             </ul>
           </div><!-- End footer links column-->
 

@@ -1301,6 +1301,9 @@ section {
   border-radius: 50%;
   overflow: hidden;
   position: relative;
+  height: 25vh;
+  width: 25vh;
+  display: flex;
 }
 
 @media (max-width: 1024px) {
