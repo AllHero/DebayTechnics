@@ -1,0 +1,23 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.InfoPage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using DebayTechnics.Helpers
+@{
+	Layout = "Master.cshtml";
+}
+
+@Html.Partial("~/Views/Partials/Breadcrumbs.cshtml")
+<section id="contact" class="contact">
+	<div class="container">
+
+		<div class="section-title">
+			<h2><span>@Model.Title</span></h2>
+		</div>
+	</div>
+
+	<div class="container mt-5">
+
+		@Html.RichTxtToHtml(Model.Content)
+
+	</div>
+</section><!-- End Contact Section -->
