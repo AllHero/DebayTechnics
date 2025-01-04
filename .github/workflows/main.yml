@@ -1,5 +1,4 @@
-
-name: Build, publish and deploy project to UmbHost
+name: deploy project to UmbHost
 
 on:
   push:
