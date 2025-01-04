@@ -53,7 +53,7 @@ jobs:
           run: dir _build
 
         - name: Deploy to UmbHost
-          uses: UmbHost/umbhost-web-deploy@v1.0.1
+          uses: UmbHost/umbhost-web-deploy@v1.0.3
           with:
             website-name: ${{ secrets.WEBSITE_NAME }}
             server-computer-name: ${{ secrets.SERVER_COMPUTER_NAME }}
