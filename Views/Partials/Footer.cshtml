@@ -1,8 +1,11 @@
 @using DebayTechnics.Services
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @inject IServiceItemService ServiceItemService
+
 @{
   var diensten = ServiceItemService.GetServiceItems();
+  var contactInfo = (Contact) Model.Children().FirstOrDefault(x => x.Name == "Contact");
+
 }
 <!-- ======= Footer ======= -->
   <footer id="footer" class="footer" style="background: url('@Url.Content("~/assets/img/footer-bg.jpg")')">
@@ -15,14 +18,14 @@
             <div class="footer-info">
               <h3>DeBay Technics</h3>
               <p>
-                Langestraat <br>
-                9620 Zottegem<br><br>
-                <strong>Telefoon:</strong> +32 123 456 789<br>
-                <strong>Email:</strong> info@debaytechnics.be<br>
+                @contactInfo.Adres
+                <br><br>
+                <strong>Telefoon:</strong> @contactInfo.Telefoon<br>
+                <strong>Email:</strong> @contactInfo.Email<br>
               </p>
               <div class="social-links d-flex mt-3">
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.facebook.com/DeBayTechnics" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/debaytechnics/" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
               </div>
             </div>
           </div><!-- End footer info column-->
