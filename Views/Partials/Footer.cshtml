@@ -4,7 +4,8 @@
 
 @{
   var diensten = ServiceItemService.GetServiceItems();
-  var contactInfo = (Contact) Model.Children().FirstOrDefault(x => x.Name == "Contact");
+  var currentModel = Model.Name == "Home" ? Model : Model.Ancestor();
+  var contactInfo = (Contact) currentModel.Children().FirstOrDefault(x => x.Name == "Contact");
 
 }
 <!-- ======= Footer ======= -->
@@ -17,12 +18,18 @@
           <div class="col-lg-4 col-md-6">
             <div class="footer-info">
               <h3>DeBay Technics</h3>
+              @{
+                if (contactInfo != null)
+                {
               <p>
                 @contactInfo.Adres
                 <br><br>
                 <strong>Telefoon:</strong> @contactInfo.Telefoon<br>
                 <strong>Email:</strong> @contactInfo.Email<br>
               </p>
+                }
+              }
+              
               <div class="social-links d-flex mt-3">
                 <a href="https://www.facebook.com/DeBayTechnics" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
                 <a href="https://www.instagram.com/debaytechnics/" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>

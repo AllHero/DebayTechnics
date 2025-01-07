@@ -1,0 +1,33 @@
+﻿@using DebayTechnics.Models
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Review>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+<main id="main">
+@Html.Partial("~/Views/Partials/Breadcrumbs.cshtml")
+	<section id="contact" class="contact">
+	<div class="row justify-content-center align-items-center align-content-center">
+		<div class="col-6">
+			@await Component.InvokeAsync("Review", new TestimonialModel() {TestimonialFormId = Umbraco.AssignedContentItem.Id})
+			@if (!string.IsNullOrEmpty(Context.Request.Query["success"]))
+			{
+				<div class="messages row">
+					<div class="col">
+						@if (Context.Request.Query["success"].ToString().ToLower() == "false")
+						{
+							<div class="error-message">Oeps er liep wat fout, probeer later opnieuw</div>
+						}
+						else if (Context.Request.Query["success"].ToString().ToLower() == "true")
+						{
+							<div class="sent-message">Bedankt voor jouw review!</div>
+						}
+					</div>
+				</div>
+			}
+		</div>
+	</div>
+	</section>
+</main>

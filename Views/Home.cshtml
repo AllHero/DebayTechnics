@@ -9,9 +9,10 @@
 	Layout = "Master.cshtml";
   var diensten = ServiceItemService.GetServiceItems();
   var projecten = PortfolioService.GetPortfolioItems();
-  var testimonials = Model.Testimonials.Select(x => (Testimonials) x.Content).ToList();
   var pijlers = Model.PijlerItem.Select(x => (PijlerItem) x.Content).ToList();
   var contact = Model.FirstChild<Contact>(x => x.Id == 1108);
+  
+  var testimonials = Model.Testimonials.Select(x => (Testimonials) x.Content).ToList();
 }
 
   <!-- ======= Hero Section ======= -->
@@ -656,26 +657,8 @@
         </div>
 
         <div class="slides-2 swiper">
-          <div class="swiper-wrapper">
+          <div class="swiper-wrapper" id="testimonials-container">
 
-            @{
-              foreach (var testimonial in testimonials)
-              {
-                <div class="swiper-slide">
-                  <div class="testimonial-wrap">
-                    <div class="testimonial-item">
-                      <!--<img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">-->
-                      <h3>@testimonial.Naam</h3>
-                      <p>
-                        <i class="bi bi-quote quote-icon-left"></i>
-                        @Html.Raw(testimonial.Review)
-                        <i class="bi bi-quote quote-icon-right"></i>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              }
-            }
             
             <!-- 
             
@@ -867,3 +850,32 @@
     </section> End Recent Blog Posts Section -->
 
   </main><!-- End #main -->
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('/umbraco/api/testimonial')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('testimonials-container');
+                data.forEach(testimonial => {
+                    const testimonialHTML = `
+                        <div class="swiper-slide">
+                            <div class="testimonial-wrap">
+                                <div class="testimonial-item">
+                                    <!--<img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">-->
+                                    <h3>${testimonial.Name}</h3>
+                                    <p>
+                                        <i class="bi bi-quote quote-icon-left"></i>
+                                        ${testimonial.Message}
+                                        <i class="bi bi-quote quote-icon-right"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    container.innerHTML += testimonialHTML;
+                });
+            })
+            .catch(error => console.error('Error fetching testimonials:', error));
+    });
+</script>
